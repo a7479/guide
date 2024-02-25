@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS guide
+(
+    id   BIGSERIAL PRIMARY KEY,
+    name VARCHAR(128) NOT NULL,
+    abr  CHAR(3)      NOT NULL
+
+);
