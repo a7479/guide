@@ -9,17 +9,21 @@ package com.alex.guide.model;
  * Использовать Spring Cache для сокращения операций чтения из БД, справочник может быть достаточно большим.
  *  Использовать встроенные БД и сервер приложений.
  */
-public class Guide {
+public class Region {
 
     private int id;
     private String name;
     private String abr;
 
 
-    public Guide(int id, String name, String abbreviatedName) {
+    public Region(int id, String name, String abbreviatedName) {
         this.id = id;
         this.name = name;
         this.abr = abbreviatedName;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
