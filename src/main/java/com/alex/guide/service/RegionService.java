@@ -19,20 +19,24 @@ public class RegionService {
         this.repository = repository;
     }
 
+    @CachePut(value = "regions", key = "#region.name")
     public Region save(Region region) {
         repository.save(region);
         return region;
     }
+
     @Cacheable("regions")
     public List<Region> findAll() {
         return Collections.unmodifiableList(repository.findAll());
     }
-    @CachePut(value = "regions", key = "#region.id")
+
+    @CachePut(value = "regions")
     public Region update(Region region) {
         repository.update(region);
         return region;
     }
-    @CacheEvict("regions")
+
+    @CacheEvict(value = "regions", allEntries = true)
     public void delete(Long regionId) {
         repository.delete(regionId);
 
